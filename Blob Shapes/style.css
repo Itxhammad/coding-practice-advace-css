@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+.wrapper{
+    display:flex;
+    gap:30px;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+}
+.blob{
+    height:300px;
+    width:300px;
+    background:linear-gradient(to right,#0F0065,#05004A);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40% / 60% 40% 30% 70%;
+    animation: blob 5s infinite alternate;
+}
+@keyframes blob {
+    0%{
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    25%{
+        border-radius: 70% 40% 70% 50% / 70% 50% 30% 90%;  
+    }
+    50%{
+         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    100%{
+       border-radius: 40% 50% 90% 30% / 60% 90% 30% 70%; 
+    }
+}

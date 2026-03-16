@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    display:flex;
+    gap:30px;
+    height: 100vh;
+    width: 100%;
+    max-width: 1200px;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    background-color: red;
+    color:white;
+    font-family: jost;
+    padding:2em;
+    border-radius:10px;
+    position:relative;
+}
+/* .box::after,.box::before{
+    --angle:0deg;
+    content: "";
+    position: absolute;
+    inset: -5px;
+    width:100%;
+    height:100%;
+    background-image:conic-gradient(var--from var(--angle), transparent 70%,blue);
+    z-index: 1;
+    border-radius: 10px;
+    animation: border 4s  infinite linear forwards;
+}
+.box::before{
+    z-index:-2;
+    filter:blur(20px);
+    opacity: 0.6;
+}
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+@keyframes border {
+    from{
+        --angle:0deg;
+    }
+    to{
+        --angle:360deg;
+    }
+} */
+.box::after, .box::before {
+    --angle: 0deg;
+    content: "";
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:3px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    z-index: -1;
+    background-image: conic-gradient(from var(--angle), blue, transparent 70%);
+    animation: border 4s infinite linear forwards;
+}
+
+.box::before {
+    z-index: -2;
+    filter: blur(20px);
+    opacity: 0.6;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes border {
+    from { --angle: 0deg; }
+    to { --angle: 360deg; }
+}

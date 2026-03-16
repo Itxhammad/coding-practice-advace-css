@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.cta{
+    position:relative;
+    padding:12px 38px;
+    border:2px solid blue;
+    border-radius:100px;
+    background-color: transparent;
+    z-index: 1;
+    cursor:pointer;
+    transition: all 0.5 ease;
+    margin:auto;
+}
+.cta::before{
+    position:absolute;
+    content:"";
+    top:0px;
+    left:0;
+    bottom:0;
+    right:0;
+    width:45px;
+    height:45px;
+    background-color:lightblue;
+    border-radius:50px;
+    z-index: -4;
+    transition: all .6s ease;
+}
+.cta:hover::before{
+    width:100%;
+}
+.cta span{
+    font-family: jost;
+    font-weight: 500;
+    font-size: 15px;
+}

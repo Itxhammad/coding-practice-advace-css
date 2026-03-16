@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+    font-family:jost;
+}
+:root{
+    --primary-color:blue;
+    --text:white;
+    --text1:green;
+    --font-family:jost;
+}
+.carousel{
+    height: 100vh;
+    width:100%;
+    display:flex;
+    align-items:center;
+    overflow-x: auto;
+    max-width:1200px;
+    margin:auto;
+}
+
+.carousel::-webkit-scrollbar{
+    display:none;
+}
+.group{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:1em;
+    animation: spin 30s infinite linear;
+    padding-right:1em;
+}
+.group2{
+    display:flex;
+}
+.card{
+    flex: 0 0 250px;
+    width:100%;
+    padding:3em;
+    background:var(--primary-color);
+    font-size:16px;
+    border-radius: 1em;
+    text-align:center;
+    align-content:center;
+    color:var(--text);
+
+}
+@keyframes spin {
+    from {
+        translate: 0;
+    }
+    to {
+        translate:calc(-100% - 1em);
+    }
+}
